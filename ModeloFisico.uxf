@@ -1,8 +1,8 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>Relation</id><coordinates><x>420</x><y>160</y><w>170</w><h>40</h></coordinates><panel_attributes>m1=1
-m2=n</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>200</y><w>120</w><h>40</h></coordinates><panel_attributes>m1=n
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>300</y><w>40</w><h>150</h></coordinates><panel_attributes>m1=n
-m2=1</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>440</y><w>380</w><h>40</h></coordinates><panel_attributes>m1=1
-m2=n</panel_attributes><additional_attributes>360;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1060</x><y>400</y><w>150</w><h>190</h></coordinates><panel_attributes>Paciente
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>Relation</id><coordinates><x>160</x><y>210</y><w>170</w><h>40</h></coordinates><panel_attributes>m1=1
+m2=n</panel_attributes><additional_attributes>10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>250</y><w>120</w><h>40</h></coordinates><panel_attributes>m1=n
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>380</y><w>40</w><h>120</h></coordinates><panel_attributes>m1=n
+m2=1</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>490</y><w>380</w><h>40</h></coordinates><panel_attributes>m1=1
+m2=n</panel_attributes><additional_attributes>360;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>450</y><w>150</w><h>190</h></coordinates><panel_attributes>Paciente
 --
 id_paciente: int
 des_dni: String
@@ -13,7 +13,7 @@ des_correo: String
 des_genero: String
 des_celular: String
 fec_nacimiento: Date
-estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>430</y><w>160</w><h>120</h></coordinates><panel_attributes>Cita
+estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>480</y><w>160</w><h>120</h></coordinates><panel_attributes>Cita
 --
 id_cita: int
 id_medico: int
@@ -22,12 +22,12 @@ fec_registro: Date
 estado: boolean
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>140</y><w>160</w><h>110</h></coordinates><panel_attributes>HorarioDisponible
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>190</y><w>160</w><h>110</h></coordinates><panel_attributes>HorarioDisponible
 --
 id_horario: int
 hora_inicio: String
 hora_fin: String
-estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>150</y><w>150</w><h>160</h></coordinates><panel_attributes>Medico
+estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>200</y><w>150</w><h>190</h></coordinates><panel_attributes>Medico
 --
 id_medico: int
 id_especiaidad: int
@@ -37,16 +37,16 @@ des_nombres: String
 des_apellidos: String
 des_correo: String
 des_genero: String
-estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>150</y><w>170</w><h>110</h></coordinates><panel_attributes>Especialidad
+estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>200</y><w>170</w><h>110</h></coordinates><panel_attributes>Especialidad
 --
 id_especialidad: int
 des_especialidad: String
 des_descripcion: String
-estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>160</y><w>140</w><h>120</h></coordinates><panel_attributes>FechaDisponible
+estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>210</y><w>140</w><h>120</h></coordinates><panel_attributes>FechaDisponible
 --
 id_fecha: int
 id_horario: int
 id_medico: int
 fec_disponible: Date
-estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>200</y><w>150</w><h>40</h></coordinates><panel_attributes>m1=1
+estado: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>250</y><w>150</w><h>40</h></coordinates><panel_attributes>m1=1
 m2=n</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element></diagram>

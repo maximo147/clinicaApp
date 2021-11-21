@@ -41,7 +41,7 @@ const postObjeto = async(req, res) => {
             })
         }
 
-        return res.status(200).json(true)
+        return res.status(200).json(1)
 
 
     } catch (error) {

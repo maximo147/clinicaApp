@@ -33,7 +33,7 @@ const postObjeto = async(req, res) => {
         console.log("Parametros: ",req.params)
         console.log("Parametros: ",req.body)
         console.log("Parametros: ",req.query)
-        const paciente = new Paciente(req.params);
+        const paciente = new Paciente(req.body);
         const registro = await paciente.save();
         if(!registro){
             return res.status(400).json({

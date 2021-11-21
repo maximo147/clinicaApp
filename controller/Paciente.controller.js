@@ -30,7 +30,7 @@ const postObjeto = async(req, res) => {
     try {
         // const { num_dni, num_digito, des_nombres, des_apellidos, 
         //     des_genero, fec_nacimiento, correo, clave, celular} = req.body;
-        const paciente = new Paciente(req.body);
+        const paciente = new Paciente(req.params);
         const registro = await paciente.save();
         if(!registro){
             return res.status(400).json({

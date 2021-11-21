@@ -30,6 +30,7 @@ const postObjeto = async(req, res) => {
     try {
         // const { num_dni, num_digito, des_nombres, des_apellidos, 
         //     des_genero, fec_nacimiento, correo, clave, celular} = req.body;
+        console.log("Parametros: ",req.params)
         const paciente = new Paciente(req.params);
         const registro = await paciente.save();
         if(!registro){

@@ -11,14 +11,11 @@ const getObjetos = async (req, res) => {
 
 const getObjeto = async (req, res) => {
     try {
-        const { id } = req.params
-        console.log(id)
-        const registro = await Paciente.findById(id)
-        console.log(id)
-        if (!registro) {
-            return res.status(400).json({
-                message: "No se encontró elemento"
-            })
+        const { num_dni } = req.params
+        const registro = await Paciente.findOne({num_dni})
+        console.log(registro);
+        if (registro == null) {
+            return res.status(400).json("No se encontró elemento")
         }
         return res.status(200).json(registro)
     } catch (error) {

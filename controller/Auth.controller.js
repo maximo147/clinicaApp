@@ -3,7 +3,6 @@ const Paciente = require("../model/Paciente");
 const postAuth = async(req, res) => {
     try {
         const {num_dni, des_clave} = req.body;
-        console.log(req.body)
         const paciente = await Paciente.findOne({num_dni});
         if(!paciente){
             return res.status(400).json(0);

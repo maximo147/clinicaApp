@@ -28,11 +28,13 @@ const getObjeto = async (req, res) => {
 
 const postObjeto = async(req, res) => {
     try {
-        // const { num_dni, num_digito, des_nombres, des_apellidos, 
-        //     des_genero, fec_nacimiento, correo, clave, celular} = req.body;
-        console.log("Parametros: ",req.params)
-        console.log("Parametros: ",req.body)
-        console.log("Parametros: ",req.query)
+         const { num_dni, num_digito, des_nombres, des_apellidos, 
+             des_genero, fec_nacimiento, correo, clave, celular} = req.body;
+
+        const state = await Paciente.findOne({num_dni});
+        if(state != null){
+            return res.status(400).json(0)
+        }
         const paciente = new Paciente(req.body);
         const registro = await paciente.save();
         if(!registro){

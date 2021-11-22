@@ -15,7 +15,7 @@ const getObjeto = async (req, res) => {
         console.log(id)
         const registro = await Paciente.findById(id)
         console.log(id)
-        if(!registro){
+        if (!registro) {
             return res.status(400).json({
                 message: "No se encontró elemento"
             })
@@ -26,18 +26,19 @@ const getObjeto = async (req, res) => {
     }
 }
 
-const postObjeto = async(req, res) => {
+const postObjeto = async (req, res) => {
     try {
-         const { num_dni, num_digito, des_nombres, des_apellidos, 
-             des_genero, fec_nacimiento, correo, clave, celular} = req.body;
+        const { num_dni, num_digito, des_nombres, des_apellidos,
+            des_genero, fec_nacimiento, correo, clave, celular } = req.body;
 
-        const state = await Paciente.findOne({num_dni});
-        if(state != null){
+        const dniExiste = await Paciente.findOne({ num_dni });
+        if (dniExiste != null) {
             return res.status(400).json("DNI ya existe")
         }
+
         const paciente = new Paciente(req.body);
         const registro = await paciente.save();
-        if(!registro){
+        if (!registro) {
             return res.status(400).json({
                 message: "No se pudo guardar elemento"
             })
@@ -47,7 +48,7 @@ const postObjeto = async(req, res) => {
 
 
     } catch (error) {
-        
+
     }
 }
 

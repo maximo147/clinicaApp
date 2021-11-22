@@ -33,7 +33,7 @@ const postObjeto = async(req, res) => {
 
         const state = await Paciente.findOne({num_dni});
         if(state != null){
-            return res.status(400).json(0)
+            return res.status(400).json("DNI ya existe")
         }
         const paciente = new Paciente(req.body);
         const registro = await paciente.save();

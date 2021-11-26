@@ -25,6 +25,7 @@ const getObjeto = async (req, res) => {
 
 const postObjeto = async (req, res) => {
     try {
+        const estado = true;
         const { num_dni, num_digito, des_nombres, des_apellidos,
             des_genero, fec_nacimiento, correo, clave, celular } = req.body;
 
@@ -33,7 +34,8 @@ const postObjeto = async (req, res) => {
             return res.status(400).json("DNI ya existe")
         }
 
-        const paciente = new Paciente(req.body);
+        const paciente = new Paciente({ num_dni, num_digito, des_nombres, des_apellidos,
+            des_genero, fec_nacimiento, correo, clave, celular, estado });
         const registro = await paciente.save();
         if (!registro) {
             return res.status(400).json({

@@ -6,4 +6,4 @@ const EspecialidadSchema = new Schema({
     estado: Boolean
 });
 
-module.exports = model('Especialidad', EspecialidadSchema);
+module.exports = model('Especialidade', EspecialidadSchema);

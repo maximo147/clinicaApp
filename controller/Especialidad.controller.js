@@ -3,7 +3,9 @@ const Especialidad = require("../model/Especialidad")
 const getObjetos = async (req, res) => {
     try {
         const registros = await Especialidad.find();
-        return res.status(200).json(registros)
+        return res.status(200).json({
+            especialidades: registros
+        })
     } catch (error) {
 
     }
@@ -28,7 +30,9 @@ const postObjeto = async(req, res) => {
     try {
         // const { num_dni, num_digito, des_nombres, des_apellidos, 
         //     des_genero, fec_nacimiento, correo, clave, celular} = req.body;
-        const objeto = new Especialidad(req.body);
+        const { des_nombre, des_descripcion } = req.body;
+        const value = true;
+        const objeto = new Especialidad({ des_nombre, des_descripcion, value });
         const registro = await objeto.save();
         if(!registro){
             return res.status(400).json({

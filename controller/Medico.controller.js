@@ -27,13 +27,15 @@ const getObjetoForDni = async (req, res) => {
 const getObjetosForEsp = async (req, res) => {
     try {
         const { id_especialidad } = req.params
-        const registro = await Medico.findOne({
-            medicos: id_especialidad 
+        const registro = await Medico.find({
+           id_especialidad 
         })
         if (registro == null) {
             return res.status(400).json("No se encontró elemento")
         }
-        return res.status(200).json(registro)
+        return res.status(200).json({
+            medicos: registro 
+        })
     } catch (error) {
 
     }

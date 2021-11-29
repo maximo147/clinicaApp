@@ -27,6 +27,7 @@ class Server{
     routes = () => {
         this.app.use("/prueba", require("../router/Prueba"));
         this.app.use("/auth", require("../router/Auth.router"));
+        this.app.use("/medico", require("../router/Medico.router"));
         this.app.use("/paciente", require("../router/Paciente.router"));
         this.app.use("/especialidad", require("../router/Especialidad.router"));
     }

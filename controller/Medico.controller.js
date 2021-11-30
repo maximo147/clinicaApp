@@ -11,10 +11,10 @@ const getObjetos = async (req, res) => {
     }
 }
 
-const getObjetoForDni = async (req, res) => {
+const getObjeto = async (req, res) => {
     try {
-        const { num_dni } = req.params
-        const registro = await Medico.findOne({ num_dni })
+        const { _id } = req.params
+        const registro = await Medico.findOne({ _id })
         if (registro == null) {
             return res.status(400).json("No se encontró elemento")
         }
@@ -87,7 +87,7 @@ const postObjeto = async (req, res) => {
 
 module.exports = {
     getObjetos,
-    getObjetoForDni,
+    getObjeto,
     getObjetosForEsp,
     postObjeto
 }

@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const { getObjetos, getObjetoForDni,getObjetosForEsp, postObjeto } = require("../controller/Medico.controller")
+const { getObjetos, getObjeto,getObjetosForEsp, postObjeto } = require("../controller/Medico.controller")
 
 router.get("/", getObjetos);
-//router.get("/:dni=num_dni", getObjetoForDni);
-router.get("/:id_especialidad", getObjetosForEsp);
+
+router.get("/:_id", getObjeto);
+
+router.get("/especialidad/:id_especialidad", getObjetosForEsp);
 router.post("/", postObjeto);
 
 module.exports = router;

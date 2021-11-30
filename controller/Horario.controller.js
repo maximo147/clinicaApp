@@ -1,9 +1,9 @@
 const Horario = require("../model/Horario");
 
-const getObjects = async(req, res) => {
+const getObjects = async (req, res) => {
     try {
         const horarios = await Horario.find();
-        if(!horarios){
+        if (!horarios) {
             return res.status(400).json({
                 message: "No se pudo cargar horarios"
             })
@@ -14,15 +14,31 @@ const getObjects = async(req, res) => {
         })
 
     } catch (error) {
-        
+
     }
 }
 
-const postObject = async(req, res) => {
+const getObject = async(req, res) => {
+    try {
+        const { _id } = req.params;
+        const horario = await Horario.findOne({ _id });
+        if (!horario) {
+            return res.status(400).json({
+                message: "No se pudo cargar horarios"
+            })
+        }
+        return res.status(200).json(horario)
+
+    } catch (error) {
+
+    }
+}
+
+const postObject = async (req, res) => {
     try {
         const horario = new Horario(req.body);
         const registro = await horario.save()
-        if(!registro){
+        if (!registro) {
             return res.status(400).json({
                 message: "No se pudo guardar horario"
             })
@@ -33,11 +49,12 @@ const postObject = async(req, res) => {
         })
 
     } catch (error) {
-        
+
     }
 }
 
 module.exports = {
     getObjects,
+    getObject,
     postObject
 }

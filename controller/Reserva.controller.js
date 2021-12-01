@@ -22,7 +22,7 @@ const getObjects = async (req, res) => {
 const getObject = async(req, res) => {
     try {
         const { _id } = req.params;
-        const horario = await Horario.Reserva({ _id });
+        const horario = await Reserva.findOne({ _id });
         if (!horario) {
             return res.status(400).json({
                 message: "No se pudo cargar reservas"

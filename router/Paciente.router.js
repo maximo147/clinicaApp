@@ -3,8 +3,8 @@ const { getObjetos, getObjeto, postObjeto, putDatos, putPass } = require("../con
 
 router.get("/", getObjetos);
 router.get("/:num_dni", getObjeto);
-router.put("/editarDatos/:num_dni", putDatos);
-router.put("/editarPass/:num_dni", putPass);
+router.post("/editarDatos/:num_dni", putDatos);
+router.post("/editarPass/:num_dni", putPass);
 router.post("/", postObjeto);
 
 module.exports = router;

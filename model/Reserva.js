@@ -6,3 +6,5 @@ const ReservaSchema = new Schema({
     fec_reserva: Date,
     estado: Boolean
 })
+
+module.exports = model("Reserva", ReservaSchema);

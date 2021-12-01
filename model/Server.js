@@ -30,6 +30,7 @@ class Server{
         this.app.use("/horario", require("../router/Horario.router"));
         this.app.use("/medico", require("../router/Medico.router"));
         this.app.use("/paciente", require("../router/Paciente.router"));
+        this.app.use("/reserva", require("../router/Reserva.router"));
         this.app.use("/especialidad", require("../router/Especialidad.router"));
     }
 
